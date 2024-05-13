@@ -1,0 +1,13 @@
+{
+	"compilerOptions": {
+		"module": "CommonJS",
+		"target": "ES6",
+		"sourceMap": true,
+		"outDir": "../dist/renderer",
+		"baseUrl": ".",
+		"allowJs": true,
+		"moduleResolution": "node"
+	},
+	"include": ["**/*.ts", "src/**/*.svelte"],
+	"exclude": ["../node_modules/*", "../dist/*", "../scripts/*", "../examples/*"]
+}

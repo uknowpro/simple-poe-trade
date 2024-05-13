@@ -1,0 +1,29 @@
+{
+	"compilerOptions": {
+		"target": "es2017",
+		"sourceMap": true,
+		"outDir": "./dist/",
+		"lib": ["es2017", "es7", "es6", "DOM"],
+		"baseUrl": ".",
+		"resolveJsonModule": true,
+		"moduleResolution": "node",
+		"esModuleInterop": true,
+		"noImplicitAny": true,
+		"noImplicitThis": true,
+		"declaration": false,
+		"skipLibCheck": true,
+		"allowJs": true,
+		"strict": true,
+		"strictNullChecks": true,
+		"strictFunctionTypes": true,
+		"forceConsistentCasingInFileNames": true,
+		"isolatedModules": true,
+		"types": ["svelte", "node"],
+		"plugins": [
+			{ "transform": "typescript-transform-paths" },
+			{ "transform": "typescript-transform-paths", "afterDeclarations": true }
+		]
+	},
+	"include": ["renderer/**/*"],
+	"exclude": ["node_modules/*", "dist/*", "scripts/*", "examples/*", "electron/**/*"]
+}
