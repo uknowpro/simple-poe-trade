@@ -30,4 +30,4 @@ yarn-error.log*
 !.vscode/extensions.json
 
 # Svelte Distribution
-renderer/public/build/
+renderer/public/build/**
