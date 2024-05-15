@@ -4,7 +4,6 @@
 	import traslate from './translate';
 	import config from './configs/config';
 
-	export let ddd: string;
 	let theme = 'dark';
 </script>
 
@@ -17,16 +16,16 @@
 			설정
 		</content>
 	</TabPane>
-	<TabPane tabId="buildGPT" tab={traslate('tab.buildGPT')}>
-		<p></p>
-		<content>
-			빌드 추천
-		</content>
-	</TabPane>
 	<TabPane tabId="tips" tab={traslate('tab.tips')}>
 		<p></p>
 		<content>
 			게임 팁
+		</content>
+	</TabPane>
+	<TabPane tabId="buildGPT" tab={traslate('tab.buildGPT')}>
+		<p></p>
+		<content>
+			빌드 추천
 		</content>
 	</TabPane>
 	<TabPane tabId="changes" tab={traslate('tab.changes')}>
@@ -37,7 +36,7 @@
 	</TabPane>
 </TabContent>
 <footer>
-	<p>{traslate('app.made_in')} <a href={config.info.github_url} target="_blank">Simple POE Trade</a></p>
+	<p>{traslate('app.made_in')}  <a href={config.info.github_url} target="_blank">Simple POE Trade</a></p>
 </footer> 
 
 <style>
@@ -67,5 +66,10 @@
     text-align: center;
     /* background-color: #fff; */
     padding: 10px 0;
+	}
+
+	footer a {
+		text-decoration: none;
+		/* color: inherit; */
 	}
 </style>

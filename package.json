@@ -4,14 +4,14 @@
   "private": true,
   "type": "module",
   "license": "MIT",
-  "main": "main.js",
+  "main": "main/index.js",
   "author": "",
   "build": {
     "icon": "renderer/public/favicon.png",
     "productName": "Svelte and Electron App",
     "files": [
       "renderer/public/**/*",
-      "main.js",
+      "main/index.js",
       "preload.js"
     ],
     "win": {},

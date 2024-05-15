@@ -7,7 +7,7 @@ import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const loadURL = serve({ directory: 'renderer/public' });
+const loadURL = serve({ directory: '../renderer/public' });
 
 let mainWindow;
 
@@ -17,15 +17,15 @@ function isDev() {
 
 function createWindow() {
 	mainWindow = new BrowserWindow({
-		width: 800,
-		height: 600,
+		width: 600,
+		height: 400,
 		webPreferences: {
 				nodeIntegration: true,
-				preload: path.join(__dirname, 'preload.js'),
+				preload: path.join(__dirname, '../preload.js'),
 				// enableRemoteModule: true,
 				// contextIsolation: false
 		},
-		icon: path.join(__dirname, 'renderer/public/favicon.png'),
+		// icon: path.join(__dirname, '../renderer/public/favicon.png'),
 		show: false
 	});
 
@@ -81,5 +81,3 @@ app.on('activate', function () {
     // dock icon is clicked and there are no other windows open.
     if (mainWindow === null) createWindow()
 });
-// In this file you can include the rest of your app's specific main process
-// code. You can also put them in separate files and require them here.

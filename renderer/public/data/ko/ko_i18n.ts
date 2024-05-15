@@ -5,7 +5,7 @@ const ko = {
   "tab": {
     "setting": "설정",
     "buildGPT": "빌드GPT",
-    "tips": "팁",
+    "tips": "각종 팁",
     "changes": "변경 내역",
   },
 };
