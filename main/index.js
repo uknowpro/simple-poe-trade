@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
-import { app, BrowserWindow, shell } from 'electron';
+import { app, BrowserWindow, shell, ipcMain } from 'electron';
 import serve from 'electron-serve';
 import * as path from "path";
 import { fileURLToPath } from 'url';
@@ -13,6 +13,12 @@ let mainWindow;
 
 function isDev() {
 	return !app.isPackaged;
+}
+
+function handleSetTitle(event, title) {
+	const webContents = event.sender;
+	const win = BrowserWindow.fromWebContents(webContents);
+	win.setTitle(title);
 }
 
 function createWindow() {
@@ -67,7 +73,10 @@ function createWindow() {
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.
 // Some APIs can only be used after this event occurs.
-app.on('ready', createWindow);
+app.whenReady().then(() => {
+	ipcMain.on('simple-poe-trade', handleSetTitle);
+	createWindow();
+});
 
 // Quit when all windows are closed.
 app.on('window-all-closed', function () {
